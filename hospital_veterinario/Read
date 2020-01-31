@@ -11,3 +11,15 @@
 			<scope>test</scope>
 		</dependency>
 		
+		
+
+		@PostMapping("/users")
+	public UserModel userSave(@RequestBody UserModel userModel) {
+		return userRepository.save(userModel);
+	}
+	
+	@PutMapping("/users/{id}")
+	public UserModel userUpdate(@RequestBody UserModel userModel) {
+		userModel.setName("Ozzy");
+		return userRepository.save(userModel);
+	}
